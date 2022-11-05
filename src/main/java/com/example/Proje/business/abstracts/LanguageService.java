@@ -2,15 +2,20 @@ package com.example.Proje.business.abstracts;
 
 import java.util.List;
 
-import com.example.Proje.entities.concretes.ProgrammingLanguage;
+import com.example.Proje.business.requests.programminLanguagesRequests.CreateProgrammingLanguageRequest;
+import com.example.Proje.business.requests.programminLanguagesRequests.DeleteProgrammingLanguageRequest;
+import com.example.Proje.business.requests.programminLanguagesRequests.UpdateProgrammingLanguageRequest;
+import com.example.Proje.business.responses.programmingLanguagesResponses.GetAllProgrammingLanguagesResponse;
+import com.example.Proje.business.responses.programmingLanguagesResponses.GetByIdProgrammingLanguagesResponse;
+
 
 public interface LanguageService {
 	
-	List<ProgrammingLanguage> getAll();
-	ProgrammingLanguage getById(int id);
+	List<GetAllProgrammingLanguagesResponse> getAll();
+	GetByIdProgrammingLanguagesResponse getById(int id);
 	
-	void add(ProgrammingLanguage programmingLanguage) throws Exception;
-	void delete(int id);
-	void update(int id, String name) throws Exception;
+	void add(CreateProgrammingLanguageRequest createProgrammingLanguage) throws Exception;
+	void delete(DeleteProgrammingLanguageRequest deleteProgrammingLanguage);
+	void update(UpdateProgrammingLanguageRequest uptadeProgrammingLanguage) throws Exception;
 
 }

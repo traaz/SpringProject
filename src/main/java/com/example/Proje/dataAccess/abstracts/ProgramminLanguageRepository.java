@@ -1,19 +1,16 @@
 package com.example.Proje.dataAccess.abstracts;
 
-import java.util.List;
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.Proje.entities.concretes.ProgrammingLanguage;
 
 
 
-public interface ProgramminLanguageRepository {
+public interface ProgramminLanguageRepository extends JpaRepository<ProgrammingLanguage, Integer>{
 	
-	List<ProgrammingLanguage> getAll();
-	ProgrammingLanguage getById(int id);
 	
-	void add(ProgrammingLanguage programmingLanguage);
-	void delete(int id);
-	void update(int id, String name);
 	
 
 }
